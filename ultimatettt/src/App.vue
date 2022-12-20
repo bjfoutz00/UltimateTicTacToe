@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
-  </div>
+	<div>
+		<span>Welcome to Ultimate Tic Tac Toe!</span>
+		<button @click="startGame = true">Play</button>
+		<Play />
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Play from './components/Play'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+	components: {
+		Play
+	},
+	data() {
+		return {
+			startGame: false,
+		}
+	}
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
