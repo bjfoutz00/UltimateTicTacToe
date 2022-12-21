@@ -1,0 +1,54 @@
+.ttt-row {
+    display: flex;
+}
+
+.one {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.two {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.three {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.four {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.five {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.six {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.seven {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.eight {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.nine {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}

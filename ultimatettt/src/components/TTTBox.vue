@@ -1,7 +1,6 @@
 <template>
-	<div class="box" :class="{unmarked: !marked }" @click="mark()">
-		<div v-if="p1Mark">X</div>
-		<div v-else-if="p2Mark">O</div>
+	<div class="box" :class="{ markable: markable && !marked }" v-on="!marked && markable ? { click : () => mark() } : {}">
+		<div v-if="marked">{{ playerMark }}</div>
 	</div>
 </template>
 
@@ -9,19 +8,7 @@
 export default {
 	name: "TTTBox",
 	props: {
-		top: {
-			type: Boolean,
-			default: false,
-		},
-		right: {
-			type: Boolean,
-			default: false,
-		},
-		bottom: {
-			type: Boolean,
-			default: false,
-		},
-		left: {
+		markable: {
 			type: Boolean,
 			default: false,
 		},
@@ -31,7 +18,12 @@ export default {
 		return {
 			marked: false,
 			p1Mark: false,
-			p2Mark: false,
+		}
+	},
+
+	computed: {
+		playerMark() {
+			return this.p1Mark ? 'X' : 'O'
 		}
 	},
 
@@ -43,7 +35,6 @@ export default {
 				this.$emit("mark", 1);
 			}
 			else {
-				this.p2Mark = true;
 				this.$emit("mark", 2)
 			}
 			this.$root.player1 = !this.$root.player1;
@@ -57,21 +48,12 @@ export default {
 	.box {
 		height: 5em;
 		width: 5em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
-	.unmarked:hover {
+	.markable:hover {
 		background-color: lightgray;
 		cursor: pointer;
-	}
-	.top {
-		border-top: 1px solid black;
-	}
-	.right {
-		border-right: 1px solid black;
-	}
-	.bottom {
-		border-right: 1px solid black;
-	}
-	.left {
-		border-left: 1px solid black;
 	}
 </style>

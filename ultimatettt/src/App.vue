@@ -2,17 +2,17 @@
 	<div>
 		<span>Welcome to Ultimate Tic Tac Toe!</span>
 		<button @click="startGame = true">Play</button>
-		<Play />
+		<UltimateTTT />
 	</div>
 </template>
 
 <script>
-import Play from './components/Play'
+import UltimateTTT from './components/UltimateTTT'
 
 export default {
 	name: 'App',
 	components: {
-		Play
+		UltimateTTT
 	},
 	data() {
 		return {
